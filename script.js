@@ -113,13 +113,17 @@ document.getElementById("installBtn");
 
 installBtn.style.display = "none";
 
-window.addEventListener("beforeinstallprompt", (e) => {
+window.addEventListener(
+  "beforeinstallprompt",
+  (e) => {
 
-  e.preventDefault();
+    e.preventDefault();
 
-  deferredPrompt = e;
+    deferredPrompt = e;
 
-  installBtn.style.display = "block";
+    installBtn.style.display = "block";
+
+    console.log("PWA bisa diinstall");
 
 });
 
@@ -132,13 +136,17 @@ installBtn.addEventListener("click", async () => {
   }
 
 });
+
+
+// SERVICE WORKER
 if("serviceWorker" in navigator){
 
   window.addEventListener("load", () => {
 
-    navigator.serviceWorker.register("./sw.js")
+    navigator.serviceWorker
+    .register("./sw.js")
     .then(() => {
-      console.log("SW aktif");
+      console.log("SW berhasil");
     });
 
   });

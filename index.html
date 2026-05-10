@@ -5,20 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Xone | Premium UI</title>
 
-  <link rel="shortcut icon" href="asset/eye.jpeg" type="image/x-icon">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
-
-  <link rel="manifest" href="manifest.json">
-
-  <meta name="theme-color" content="#0f0f0f">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0b0b0b">
 </head>
 
 <body>
@@ -27,55 +17,30 @@
 <div id="loader">
   <div class="loader-box">
     <div class="spinner"></div>
-    <p>Xone loading...</p>
+    <p>Xone</p>
   </div>
 </div>
-
-<!-- NAVBAR -->
-<nav class="navbar">
-
-  <div class="logo">
-    <img src="asset/eye.jpeg" alt="">
-    <span>Xone Website</span>
-  </div>
-
-  <div class="nav-links">
-
-    <button class="nav-btn active" onclick="goHome()">Home</button>
-    <button class="nav-btn" onclick="openGallery()">Gallery</button>
-    <button class="nav-btn" onclick="openContact()">Contact</button>
-
-    <div class="nav-indicator"></div>
-
-  </div>
-
-</nav>
 
 <!-- HERO -->
 <section class="hero">
 
-  <div class="hero-card">
+  <div class="hero-card glass">
 
-    <div class="badge"><b>xone pages</b></div>
+    <div class="badge">XONE</div>
 
-    <h1>pokonya web deh hehehe.</h1>
+    <h1>Modern UI Experience</h1>
 
-    <p>Website modern bertema estetik.</p>
+    <p>
+      Clean interface inspired by Spotify & Apple design system.
+    </p>
 
     <div class="buttons">
-
-      <button class="primary-btn" onclick="toggleMusic()">
-        play instrument music
-      </button>
-
-      <button class="theme-btn" onclick="toggleTheme()">
-        dark mode
-      </button>
-
+      <button onclick="toggleTheme()">Toggle Theme</button>
+      <button onclick="toggleMusic()">Play Music</button>
     </div>
 
     <audio id="bgMusic" loop>
-      <source src="asset/violin.mp3" type="audio/mp3">
+      <source src="asset/violin.mp3">
     </audio>
 
   </div>
@@ -83,22 +48,16 @@
   <div class="glass-card">
 
     <div class="profile">
-
       <div class="avatar"></div>
-
       <div>
-        <h3>Hnafi Developer</h3>
+        <h3>Xone Dev</h3>
+        <p>UI Designer</p>
       </div>
-
     </div>
 
-    <div class="status-box">
+    <div class="status">
       <h2 id="counter">0</h2>
-      <p>menghitung</p>
-    </div>
-
-    <div class="quote">
-      “calm mind brings inner strength.”
+      <p>system running</p>
     </div>
 
   </div>
@@ -108,64 +67,55 @@
 <!-- FEATURES -->
 <section class="features">
 
-  <div class="card">Estetika modern</div>
-  <div class="card">UI clean</div>
-  <div class="card">Responsive</div>
-  <div class="card">Fast</div>
+  <div class="card glass">Clean Design</div>
+  <div class="card glass">Smooth UI</div>
+  <div class="card glass">Fast System</div>
+  <div class="card glass">Modern Theme</div>
 
 </section>
 
 <!-- GALLERY -->
-<section class="gallery-section" id="gallery">
+<section id="gallery" class="gallery">
 
-  <h2>gallery photo</h2>
+  <h2>Gallery</h2>
 
-  <div class="gallery-grid">
-
-    <div class="gallery-item"><img src="asset/foto1.jpeg"></div>
-    <div class="gallery-item"><img src="asset/foto2.jpeg"></div>
-    <div class="gallery-item"><img src="asset/foto3.jpeg"></div>
-
+  <div class="grid">
+    <img src="asset/foto1.jpeg">
+    <img src="asset/foto2.jpeg">
+    <img src="asset/foto3.jpeg">
   </div>
 
 </section>
 
-<!-- EXTRA SECTION (BIAR PANJANG) -->
-<section class="extra-section">
+<!-- EXTRA -->
+<section class="extra">
 
-  <div class="extra-card">
-    <h2>About Xone</h2>
+  <div class="glass-card">
+    <h2>About System</h2>
     <p>
-      Xone adalah web UI modern dengan konsep glassmorphism dan dark aesthetic.
+      A premium UI system inspired by Apple and Spotify design language.
     </p>
   </div>
 
 </section>
 
-<!-- CONTACT MODAL -->
-<div id="contactModal" class="modal">
-  <div class="modal-box">
-    <span class="close" onclick="closeContact()">&times;</span>
-    <h2>hubungi saya</h2>
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-box glass">
+    <span onclick="closeModal()" class="close">×</span>
+    <h2>Contact</h2>
     <p>@hnfi_ehs</p>
   </div>
 </div>
 
-<!-- BOTTOM NAV -->
-<div class="bottom-nav">
-  <button onclick="goHome()">🏠</button>
-  <button onclick="openGallery()">🖼️</button>
-  <button onclick="openContact()">💬</button>
-</div>
+<!-- BOTTOM NAV (ONLY NAVIGATION) -->
+<div class="bottom-nav glass">
 
-<!-- TOAST -->
-<div id="toast" class="toast">
-  <p>selamat datang di Xone ✨</p>
-</div>
+  <button onclick="goHome()">Home</button>
+  <button onclick="openGallery()">Gallery</button>
+  <button onclick="openContact()">Contact</button>
 
-<footer class="footer">
-  © 2026 Xone Website
-</footer>
+</div>
 
 <script src="script.js"></script>
 

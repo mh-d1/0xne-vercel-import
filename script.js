@@ -1,21 +1,22 @@
 
-
 let count = 0;
 
-const counter =
-document.getElementById('counter');
+const counter = document.getElementById('counter');
 
 const interval = setInterval(() => {
 
   count += 3;
 
-  counter.textContent = count;
-
-  if(count >= 2008){
+  if (count >= 2009) {
+    count = 2009;
+    counter.textContent = count;
     clearInterval(interval);
+    return;
   }
 
-}, 09);
+  counter.textContent = count;
+
+}, 9);
 
 // EXPLORE BUTTON
 function showMessage(){

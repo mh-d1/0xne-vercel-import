@@ -11,7 +11,7 @@ const interval = setInterval(() => {
 
   counter.textContent = count;
 
-  if(count >= 2009){
+  if(count >= 2008){
     clearInterval(interval);
   }
 

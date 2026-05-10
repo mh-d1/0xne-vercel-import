@@ -7,7 +7,7 @@ document.getElementById('counter');
 
 const interval = setInterval(() => {
 
-  count += 7;
+  count += 2;
 
   counter.textContent = count;
 
@@ -15,7 +15,7 @@ const interval = setInterval(() => {
     clearInterval(interval);
   }
 
-}, 20);
+}, 10);
 
 // EXPLORE BUTTON
 function showMessage(){

@@ -1,175 +1,120 @@
 // COUNTER
 let count = 0;
-
 const counter = document.getElementById("counter");
 
 const interval = setInterval(() => {
-
   count += 7;
 
-  if(count >= 2009){
+  if (count >= 2009) {
     count = 2009;
     clearInterval(interval);
   }
 
   counter.textContent = count;
-
 }, 20);
 
 
 // THEME
-function toggleTheme(){
+function toggleTheme() {
   document.body.classList.toggle("dark");
 }
 
 
-// HOME
-function goHome(){
-
+// NAVIGATION
+function goHome() {
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
-
 }
 
-
-// GALLERY
-function openGallery(){
-
-  document.getElementById("gallery")
-  .scrollIntoView({
+function openGallery() {
+  document.getElementById("gallery").scrollIntoView({
     behavior: "smooth"
   });
-
 }
 
 
-// CONTACT MODAL
-const contactModal =
-document.getElementById("contactModal");
+// CONTACT
+const contactModal = document.getElementById("contactModal");
 
-function openContact(){
+function openContact() {
   contactModal.style.display = "flex";
 }
 
-function closeContact(){
+function closeContact() {
   contactModal.style.display = "none";
 }
 
 
 // MUSIC
-const bgMusic =
-document.getElementById("bgMusic");
+const bgMusic = document.getElementById("bgMusic");
 
-function toggleMusic(){
-
-  if(bgMusic.paused){
+function toggleMusic() {
+  if (bgMusic.paused) {
     bgMusic.play();
   } else {
     bgMusic.pause();
   }
-
 }
 
 
-// INFO MODAL
-function openModal(title, text){
-
-  document.getElementById("modal")
-  .style.display = "flex";
-
-  document.getElementById("modal-title")
-  .innerText = title;
-
-  document.getElementById("modal-text")
-  .innerText = text;
-
+// MODAL INFO
+function openModal(title, text) {
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modal-title").innerText = title;
+  document.getElementById("modal-text").innerText = text;
 }
 
-function closeModal(){
-
-  document.getElementById("modal")
-  .style.display = "none";
-
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
 }
 
 
-// CLOSE MODAL OUTSIDE
+// CLOSE MODAL CLICK OUTSIDE
 window.addEventListener("click", (e) => {
-
-  if(e.target.classList.contains("modal")){
+  if (e.target.classList.contains("modal")) {
     e.target.style.display = "none";
   }
-
 });
 
 
 // INSTALL APP
 let deferredPrompt;
-
-const installBtn =
-document.getElementById("installBtn");
+const installBtn = document.getElementById("installBtn");
 
 installBtn.style.display = "none";
 
-window.addEventListener(
-  "beforeinstallprompt",
-  (e) => {
-
-    e.preventDefault();
-
-    deferredPrompt = e;
-
-    installBtn.style.display = "block";
-
-    console.log("PWA bisa diinstall");
-
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.style.display = "block";
 });
 
 installBtn.addEventListener("click", async () => {
-
-  if(deferredPrompt){
-
+  if (deferredPrompt) {
     deferredPrompt.prompt();
-
   }
-
 });
 
 
 // SERVICE WORKER
-if("serviceWorker" in navigator){
-
+if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-
-    navigator.serviceWorker
-    .register("./sw.js")
-    .then(() => {
-      console.log("SW berhasil");
-    });
-
+    navigator.serviceWorker.register("./sw.js");
   });
-
 }
 
-// NOTIF
 
+// TOAST NOTIF
 window.addEventListener("load", () => {
-
-  const toast =
-  document.getElementById("toast");
+  const toast = document.getElementById("toast");
 
   setTimeout(() => {
-
     toast.classList.add("show");
-
   }, 800);
 
   setTimeout(() => {
-
     toast.classList.remove("show");
-
   }, 4000);
-
 });

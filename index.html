@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rixe | Personal web</title>
+  <title>Xone | Premium UI</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon"
@@ -21,14 +21,11 @@
   <!-- json -->
   <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#0f0f0f">
-
-  <!-- json -->
-  <link rel="manifest" href="./manifest.json">
-  <meta name="theme-color" content="#0f0f0f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
+
 
 <body id="top">
 
@@ -37,7 +34,7 @@
 
     <div class="logo">
       <img src="asset/eye.jpeg">
-      <span>Rixe website</span>
+      <span>Xone website</span>
     </div>
 
     <div class="nav-links">
@@ -54,17 +51,17 @@
     <div class="hero-card">
 
       <div class="badge">
-         <b>Rixe pages</b>
+         <b>xone pages</b>
       </div>
 
       <h1>
-        pokoknya web deh
+        pokonya web deh
         hehehe.
       </h1>
 
       <p>
-        Website bertema estetik,
-        semoga bisa jadi inspirasi buat yang mau belajar bikin website 
+        Website modern bertema estetik,
+        semoga bisa jadi inspirasi buat kalian yang mau belajar bikin website 
       </p>
 
       <div class="buttons">
@@ -77,9 +74,9 @@
       <audio id="bgMusic" loop>
          <source src="asset/violin.mp3" type="audio/mp3">
       </audio>
-        <button class="secondary-btn"
-        onclick="changeTheme()">
-          Toggle Glow
+        <button class="theme-btn"
+        onclick="toggleTheme()">
+          dark mode
         </button>
 
       </div>
@@ -94,7 +91,7 @@
         <div class="avatar"></div>
 
         <div>
-             <h3>Hnnfi WebDev</h3>
+             <h3>Hnafi Developer</h3>
 
             <div class="social">
                <img 
@@ -144,7 +141,7 @@
 
     <br><br>
 
-    <p>hubungi lewat ig yaa</p>
+    <p>nomor telepon privasi guys</p>
       
     
 
@@ -206,7 +203,7 @@ body{
 
 .features{
   display:grid;
-  grid-template-columns:repeat(left,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
   padding:40px;
 }
@@ -305,7 +302,7 @@ window.onclick = function(e){
 
   <section class="gallery-section" id="gallery">
 
-  <h2>gallery</h2>
+  <h2>gallery photo</h2>
 
   <div class="gallery-grid">
 
@@ -328,24 +325,23 @@ window.onclick = function(e){
   </div>
 
   </section>
-
-   <!-- INSTALL BUTTON -->
+  <!-- INSTALL BUTTON -->
   <button id="installbtn">
     install app
   </button>
   <script>
     let deferredPrompt;
+    const installBtn = document.getElementById('installbtn');
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      document.getElementById('installbtn').style.display = 'block';
+      installBtn.style.display = 'block';
     });
-    document.getElementById('installbtn').addEventListener('click', async () => {
+    installBtn.addEventListener('click', async () => {
       deferredPrompt.prompt();
     });
-  </script> 
+  </script>
 
-  
   <!-- FOOTER -->
   <footer class="footer">
     © 2026 pokoknya copyright deh — copy kanan semua milik admin, jangan diambil yaa

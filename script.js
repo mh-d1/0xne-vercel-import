@@ -7,7 +7,7 @@ document.getElementById('counter');
 
 const interval = setInterval(() => {
 
-  count += 2;
+  count += 3;
 
   counter.textContent = count;
 

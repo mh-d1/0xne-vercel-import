@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Xone | Premium UI</title>
 
-  <link rel="shortcut icon" href="asset/eye.jpeg">
+  <link rel="shortcut icon" href="asset/eye.jpeg" type="image/x-icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
@@ -16,9 +17,19 @@
   <link rel="manifest" href="manifest.json">
 
   <meta name="theme-color" content="#0f0f0f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
 </head>
 
 <body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-box">
+    <div class="spinner"></div>
+    <p>Xone loading...</p>
+  </div>
+</div>
 
 <!-- NAVBAR -->
 <nav class="navbar">
@@ -29,9 +40,13 @@
   </div>
 
   <div class="nav-links">
-    <button onclick="goHome()">Home</button>
-    <button onclick="openGallery()">Gallery</button>
-    <button onclick="openContact()">Contact</button>
+
+    <button class="nav-btn active" onclick="goHome()">Home</button>
+    <button class="nav-btn" onclick="openGallery()">Gallery</button>
+    <button class="nav-btn" onclick="openContact()">Contact</button>
+
+    <div class="nav-indicator"></div>
+
   </div>
 
 </nav>
@@ -41,16 +56,11 @@
 
   <div class="hero-card">
 
-    <div class="badge">
-      <b>xone pages</b>
-    </div>
+    <div class="badge"><b>xone pages</b></div>
 
     <h1>pokonya web deh hehehe.</h1>
 
-    <p>
-      Website modern bertema estetik,
-      semoga bisa jadi inspirasi buat kalian yang mau belajar bikin website.
-    </p>
+    <p>Website modern bertema estetik.</p>
 
     <div class="buttons">
 
@@ -70,7 +80,6 @@
 
   </div>
 
-  <!-- PROFILE -->
   <div class="glass-card">
 
     <div class="profile">
@@ -79,19 +88,13 @@
 
       <div>
         <h3>Hnafi Developer</h3>
-
-        <div class="social">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-          <a href="https://instagram.com/hnfi_ehs" target="_blank">@hnfi_ehs</a>
-        </div>
-
       </div>
 
     </div>
 
     <div class="status-box">
       <h2 id="counter">0</h2>
-      <p>menghitung guys</p>
+      <p>menghitung</p>
     </div>
 
     <div class="quote">
@@ -105,25 +108,10 @@
 <!-- FEATURES -->
 <section class="features">
 
-  <div class="card" onclick="openModal('Pandangan Estetika','Dirancang dengan nuansa modern dan tenang.')">
-    <h3>❀ Pandangan Estetika</h3>
-    <p>Tenang, modern, dan penuh keseimbangan visual.</p>
-  </div>
-
-  <div class="card" onclick="openModal('Makna Keindahan','Keindahan hadir dalam detail sederhana.')">
-    <h3>❀ Makna Keindahan</h3>
-    <p>Keindahan tersembunyi dalam detail sederhana.</p>
-  </div>
-
-  <div class="card" onclick="openModal('Percaya Diri','Tetap menjadi diri sendiri dengan tenang.')">
-    <h3>❀ Percaya Diri</h3>
-    <p>Ketulusan lebih kuat daripada keramaian.</p>
-  </div>
-
-  <div class="card" onclick="openModal('Tentang Kehidupan','Setiap perjalanan membawa arti.')">
-    <h3>❀ Tentang Kehidupan</h3>
-    <p>Setiap perjalanan membawa arti berbeda.</p>
-  </div>
+  <div class="card">Estetika modern</div>
+  <div class="card">UI clean</div>
+  <div class="card">Responsive</div>
+  <div class="card">Fast</div>
 
 </section>
 
@@ -137,32 +125,37 @@
     <div class="gallery-item"><img src="asset/foto1.jpeg"></div>
     <div class="gallery-item"><img src="asset/foto2.jpeg"></div>
     <div class="gallery-item"><img src="asset/foto3.jpeg"></div>
-    <div class="gallery-item"><img src="asset/Gawat ni orang.jpeg"></div>
 
   </div>
 
 </section>
 
-<!-- INSTALL -->
-<button id="installBtn">install app</button>
+<!-- EXTRA SECTION (BIAR PANJANG) -->
+<section class="extra-section">
+
+  <div class="extra-card">
+    <h2>About Xone</h2>
+    <p>
+      Xone adalah web UI modern dengan konsep glassmorphism dan dark aesthetic.
+    </p>
+  </div>
+
+</section>
 
 <!-- CONTACT MODAL -->
 <div id="contactModal" class="modal">
   <div class="modal-box">
     <span class="close" onclick="closeContact()">&times;</span>
     <h2>hubungi saya</h2>
-    <p>follow instagram saya :</p>
-    <a href="https://instagram.com/hnfi_ehs" target="_blank">@hnfi_ehs</a>
+    <p>@hnfi_ehs</p>
   </div>
 </div>
 
-<!-- INFO MODAL -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <h2 id="modal-title"></h2>
-    <p id="modal-text"></p>
-  </div>
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <button onclick="goHome()">🏠</button>
+  <button onclick="openGallery()">🖼️</button>
+  <button onclick="openContact()">💬</button>
 </div>
 
 <!-- TOAST -->
@@ -170,7 +163,6 @@
   <p>selamat datang di Xone ✨</p>
 </div>
 
-<!-- FOOTER -->
 <footer class="footer">
   © 2026 Xone Website
 </footer>

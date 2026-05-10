@@ -5,20 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Xone | Premium UI</title>
 
-  <link rel="stylesheet" href="style.css">
+  <!-- FONT ASLI KAMU -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR (LOGO ONLY - CLEAN) -->
+<!-- NAVBAR (LOGO ONLY) -->
 <nav class="navbar">
-
   <div class="logo">
     <img src="asset/eye.jpeg" alt="">
     <span>Xone Website</span>
   </div>
-
 </nav>
 
 <!-- HERO -->
@@ -31,13 +34,13 @@
     <h1>pokonya web deh hehehe.</h1>
 
     <p>
-      Website modern bertema estetik, clean UI dan responsive layout.
+      Website modern bertema estetik, clean UI dan responsive.
     </p>
 
     <div class="buttons">
 
-      <button onclick="toggleMusic()">Play Music</button>
-      <button onclick="toggleTheme()">Dark Mode</button>
+      <button onclick="toggleMusic()">play instrument music</button>
+      <button onclick="toggleTheme()">dark mode</button>
 
     </div>
 
@@ -47,6 +50,7 @@
 
   </div>
 
+  <!-- PROFILE (RESTORED FULL) -->
   <div class="glass-card">
 
     <div class="profile">
@@ -55,13 +59,19 @@
 
       <div>
         <h3>Hnafi Developer</h3>
+
+        <div class="social">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+          <a href="https://instagram.com/hnfi_ehs" target="_blank">@hnfi_ehs</a>
+        </div>
+
       </div>
 
     </div>
 
     <div class="status-box">
       <h2 id="counter">0</h2>
-      <p>menghitung</p>
+      <p>menghitung guys</p>
     </div>
 
     <div class="quote">
@@ -72,17 +82,28 @@
 
 </section>
 
-<!-- FEATURES -->
+<!-- FEATURES (RESTORED CLICK POPUP) -->
 <section class="features">
 
-  <div class="card">Estetika modern</div>
-  <div class="card">UI clean</div>
-  <div class="card">Responsive</div>
-  <div class="card">Fast loading</div>
+  <div class="card" onclick="openModal('Pandangan Estetika','Dirancang dengan nuansa modern dan tenang.')">
+    ❀ Pandangan Estetika
+  </div>
+
+  <div class="card" onclick="openModal('Makna Keindahan','Keindahan hadir dalam detail sederhana.')">
+    ❀ Makna Keindahan
+  </div>
+
+  <div class="card" onclick="openModal('Percaya Diri','Tetap menjadi diri sendiri dengan tenang.')">
+    ❀ Percaya Diri
+  </div>
+
+  <div class="card" onclick="openModal('Tentang Kehidupan','Setiap perjalanan membawa arti.')">
+    ❀ Tentang Kehidupan
+  </div>
 
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERY (RESTORED FULL) -->
 <section id="gallery" class="gallery-section">
 
   <h2>gallery photo</h2>
@@ -98,33 +119,31 @@
 
 </section>
 
-<!-- FEATURES EXTRA / ABOUT -->
+<!-- EXTRA SECTION -->
 <section class="extra-section">
 
   <div class="extra-card">
     <h2>About Xone</h2>
-    <p>
-      UI experiment modern dengan konsep glassmorphism + clean layout system.
-    </p>
+    <p>UI experiment modern dengan glass + dark aesthetic.</p>
   </div>
 
 </section>
 
-<!-- CONTACT MODAL -->
+<!-- CONTACT MODAL (RESTORED) -->
 <div id="contactModal" class="modal">
 
   <div class="modal-box">
 
     <span class="close" onclick="closeContact()">&times;</span>
 
-    <h2>Contact</h2>
+    <h2>hubungi saya</h2>
     <p>@hnfi_ehs</p>
 
   </div>
 
 </div>
 
-<!-- INFO MODAL -->
+<!-- INFO MODAL (FEATURE POPUP FIXED) -->
 <div id="modal" class="modal">
 
   <div class="modal-content">
@@ -138,7 +157,7 @@
 
 </div>
 
-<!-- BOTTOM NAV (REPLACEMENT NAVBAR ATAS) -->
+<!-- BOTTOM NAV (ONLY NAVIGATION) -->
 <div class="bottom-nav">
 
   <button onclick="goHome()">Home</button>
@@ -147,8 +166,9 @@
 
 </div>
 
+<!-- FOOTER (RESTORED COPYRIGHT) -->
 <footer class="footer">
-  © 2026 Xone Website
+  © 2026 Xone Website • Hnafi Dev
 </footer>
 
 <script src="script.js"></script>

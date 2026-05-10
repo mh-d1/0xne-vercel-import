@@ -7,30 +7,38 @@
 
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <meta name="theme-color" content="#0b0b0b">
 </head>
 
 <body>
 
+<!-- NAVBAR (LOGO ONLY - CLEAN) -->
+<nav class="navbar">
 
+  <div class="logo">
+    <img src="asset/eye.jpeg" alt="">
+    <span>Xone Website</span>
+  </div>
+
+</nav>
 
 <!-- HERO -->
 <section class="hero">
 
-  <div class="hero-card glass">
+  <div class="hero-card">
 
-    <div class="badge">XONE</div>
+    <div class="badge"><b>xone pages</b></div>
 
-    <h1>Modern UI Experience</h1>
+    <h1>pokonya web deh hehehe.</h1>
 
     <p>
-      Clean interface inspired by Spotify & Apple design system.
+      Website modern bertema estetik, clean UI dan responsive layout.
     </p>
 
     <div class="buttons">
-      <button onclick="toggleTheme()">Toggle Theme</button>
+
       <button onclick="toggleMusic()">Play Music</button>
+      <button onclick="toggleTheme()">Dark Mode</button>
+
     </div>
 
     <audio id="bgMusic" loop>
@@ -42,16 +50,22 @@
   <div class="glass-card">
 
     <div class="profile">
+
       <div class="avatar"></div>
+
       <div>
-        <h3>Xone Dev</h3>
-        <p>UI Designer</p>
+        <h3>Hnafi Developer</h3>
       </div>
+
     </div>
 
-    <div class="status">
+    <div class="status-box">
       <h2 id="counter">0</h2>
-      <p>system running</p>
+      <p>menghitung</p>
+    </div>
+
+    <div class="quote">
+      “calm mind brings inner strength.”
     </div>
 
   </div>
@@ -61,55 +75,81 @@
 <!-- FEATURES -->
 <section class="features">
 
-  <div class="card glass">Clean Design</div>
-  <div class="card glass">Smooth UI</div>
-  <div class="card glass">Fast System</div>
-  <div class="card glass">Modern Theme</div>
+  <div class="card">Estetika modern</div>
+  <div class="card">UI clean</div>
+  <div class="card">Responsive</div>
+  <div class="card">Fast loading</div>
 
 </section>
 
 <!-- GALLERY -->
-<section id="gallery" class="gallery">
+<section id="gallery" class="gallery-section">
 
-  <h2>Gallery</h2>
+  <h2>gallery photo</h2>
 
-  <div class="grid">
-    <img src="asset/foto1.jpeg">
-    <img src="asset/foto2.jpeg">
-    <img src="asset/foto3.jpeg">
+  <div class="gallery-grid">
+
+    <div class="gallery-item"><img src="asset/foto1.jpeg"></div>
+    <div class="gallery-item"><img src="asset/foto2.jpeg"></div>
+    <div class="gallery-item"><img src="asset/foto3.jpeg"></div>
+    <div class="gallery-item"><img src="asset/Gawat ni orang.jpeg"></div>
+
   </div>
 
 </section>
 
-<!-- EXTRA -->
-<section class="extra">
+<!-- FEATURES EXTRA / ABOUT -->
+<section class="extra-section">
 
-  <div class="glass-card">
-    <h2>About System</h2>
+  <div class="extra-card">
+    <h2>About Xone</h2>
     <p>
-      A premium UI system inspired by Apple and Spotify design language.
+      UI experiment modern dengan konsep glassmorphism + clean layout system.
     </p>
   </div>
 
 </section>
 
-<!-- MODAL -->
-<div id="modal" class="modal">
-  <div class="modal-box glass">
-    <span onclick="closeModal()" class="close">×</span>
+<!-- CONTACT MODAL -->
+<div id="contactModal" class="modal">
+
+  <div class="modal-box">
+
+    <span class="close" onclick="closeContact()">&times;</span>
+
     <h2>Contact</h2>
     <p>@hnfi_ehs</p>
+
   </div>
+
 </div>
 
-<!-- BOTTOM NAV (ONLY NAVIGATION) -->
-<div class="bottom-nav glass">
+<!-- INFO MODAL -->
+<div id="modal" class="modal">
+
+  <div class="modal-content">
+
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <h2 id="modal-title"></h2>
+    <p id="modal-text"></p>
+
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV (REPLACEMENT NAVBAR ATAS) -->
+<div class="bottom-nav">
 
   <button onclick="goHome()">Home</button>
   <button onclick="openGallery()">Gallery</button>
   <button onclick="openContact()">Contact</button>
 
 </div>
+
+<footer class="footer">
+  © 2026 Xone Website
+</footer>
 
 <script src="script.js"></script>
 

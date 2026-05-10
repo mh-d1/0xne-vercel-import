@@ -15,7 +15,7 @@ const interval = setInterval(() => {
     clearInterval(interval);
   }
 
-}, 10);
+}, 09);
 
 // EXPLORE BUTTON
 function showMessage(){

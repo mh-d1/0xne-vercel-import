@@ -33,34 +33,9 @@ body{
   transition:0.3s;
 
 
-  margin: 0;
-  background: #000;
+  
 }
 
-.app {
-  min-height: 100vh;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
-.app {
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-}
-
-.topbar {
-  height: 56px;
-}
-
-.content {
-  flex: 1;
-  overflow: auto;
-}
-
-.bottombar {
-  height: 60px;
-}
 
 /* NAVBAR */
 

@@ -93,3 +93,46 @@ window.addEventListener("load", () => {
     document.getElementById("toast").classList.add("show");
   }, 800);
 });
+// COUNTER
+let count = 0;
+setInterval(()=>{
+  if(count < 2009){
+    count += 7;
+    document.getElementById("counter").innerText = count;
+  }
+},20);
+
+// THEME
+function toggleTheme(){
+  document.body.classList.toggle("dark");
+}
+
+// MUSIC
+function toggleMusic(){
+  const m = document.getElementById("bgMusic");
+  m.paused ? m.play() : m.pause();
+}
+
+// NAV
+function goHome(){
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function openGallery(){
+  document.getElementById("gallery").scrollIntoView({behavior:"smooth"});
+}
+
+function openContact(){
+  document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+
+// LOADER
+window.onload = ()=>{
+  setTimeout(()=>{
+    document.getElementById("loader").style.display="none";
+  },800);
+}

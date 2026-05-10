@@ -152,3 +152,24 @@ if("serviceWorker" in navigator){
   });
 
 }
+
+// NOTIF
+
+window.addEventListener("load", () => {
+
+  const toast =
+  document.getElementById("toast");
+
+  setTimeout(() => {
+
+    toast.classList.add("show");
+
+  }, 800);
+
+  setTimeout(() => {
+
+    toast.classList.remove("show");
+
+  }, 4000);
+
+});

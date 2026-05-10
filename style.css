@@ -6,60 +6,61 @@
 
 body{
   font-family:'Inter',sans-serif;
-  background:#0b0b0b;
+  background:#050505;
   color:#fff;
   overflow-x:hidden;
-  animation:fadeIn 0.4s ease;
+  padding:30px;
 }
 
+/* NAVBAR CLEAN */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 
-@keyframes fadeIn{
-  from{opacity:0; transform:scale(0.98);}
-  to{opacity:1; transform:scale(1);}
+  padding:10px 0;
 }
 
-/* GLASS SYSTEM */
-.glass{
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(20px);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:20px;
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
+.logo img{
+  width:40px;
+  border-radius:50%;
+}
 
-/* HERO */
+/* HERO FIX PROPORTION */
 .hero{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:20px;
+
+  margin-top:40px;
+}
+
+.hero-card,
+.glass-card,
+.card,
+.modal-box,
+.modal-content,
+.extra-card{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);
+  backdrop-filter:blur(20px);
+  border-radius:20px;
+}
+
+.hero-card,
+.glass-card{
   padding:30px;
-  margin-top:80px;
-}
-
-.hero-card{
-  padding:30px;
-}
-
-.badge{
-  display:inline-block;
-  padding:6px 12px;
-  border-radius:999px;
-  font-size:12px;
-  background:rgba(255,255,255,0.1);
-}
-
-h1{
-  font-size:40px;
-  margin:15px 0;
-}
-
-p{
-  color:#aaa;
 }
 
 /* BUTTON */
 button{
-  padding:10px 16px;
+  padding:10px 14px;
   border:none;
   border-radius:12px;
   background:rgba(255,255,255,0.1);
@@ -72,7 +73,7 @@ button{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:15px;
-  padding:30px;
+  margin:40px 0;
 }
 
 .card{
@@ -81,24 +82,24 @@ button{
 }
 
 /* GALLERY */
-.gallery{
-  padding:30px;
-}
-
-.grid{
+.gallery-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:10px;
 }
 
-.grid img{
+.gallery-item img{
   width:100%;
   border-radius:15px;
 }
 
 /* EXTRA */
-.extra{
-  padding:30px;
+.extra-section{
+  margin:50px 0;
+}
+
+.extra-card{
+  padding:25px;
 }
 
 /* MODAL */
@@ -111,12 +112,7 @@ button{
   align-items:center;
 }
 
-.modal-box{
-  padding:30px;
-  width:300px;
-}
-
-/* BOTTOM NAV (APPLE STYLE) */
+/* BOTTOM NAV (MAIN NAV) */
 .bottom-nav{
   position:fixed;
   bottom:15px;
@@ -131,15 +127,24 @@ button{
   padding:12px;
 
   border-radius:18px;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.1);
 }
 
 .bottom-nav button{
   background:none;
   font-weight:500;
-  color:#fff;
 }
 
-/* RESPONSIVE */
+/* FOOTER */
+.footer{
+  text-align:center;
+  margin-top:80px;
+  color:#aaa;
+}
+
+/* RESPONSIVE FIX */
 @media(max-width:900px){
   .hero{
     grid-template-columns:1fr;
@@ -149,7 +154,7 @@ button{
     grid-template-columns:1fr 1fr;
   }
 
-  .grid{
+  .gallery-grid{
     grid-template-columns:1fr;
   }
 }

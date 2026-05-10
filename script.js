@@ -2,119 +2,94 @@
 let count = 0;
 const counter = document.getElementById("counter");
 
-const interval = setInterval(() => {
-  count += 7;
-
-  if (count >= 2009) {
-    count = 2009;
-    clearInterval(interval);
+setInterval(() => {
+  if (count < 2009) {
+    count += 7;
+    counter.textContent = count;
   }
-
-  counter.textContent = count;
 }, 20);
 
 
-// THEME
-function toggleTheme() {
-  document.body.classList.toggle("dark");
+// NAV INDICATOR
+const navBtns = document.querySelectorAll(".nav-btn");
+const indicator = document.querySelector(".nav-indicator");
+
+function moveIndicator(el){
+  indicator.style.width = el.offsetWidth + "px";
+  indicator.style.left = el.offsetLeft + "px";
 }
+
+navBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    navBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    moveIndicator(btn);
+  });
+});
+
+window.addEventListener("load", () => {
+  const active = document.querySelector(".nav-btn.active");
+  if(active) moveIndicator(active);
+});
 
 
 // NAVIGATION
-function goHome() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+function goHome(){
+  document.querySelector(".hero").scrollIntoView({
+    behavior:"smooth"
   });
 }
 
-function openGallery() {
-  document.getElementById("gallery").scrollIntoView({
-    behavior: "smooth"
+function openGallery(){
+  document.querySelector("#gallery").scrollIntoView({
+    behavior:"smooth"
   });
 }
 
 
 // CONTACT
-const contactModal = document.getElementById("contactModal");
-
-function openContact() {
-  contactModal.style.display = "flex";
+function openContact(){
+  document.getElementById("contactModal").style.display = "flex";
 }
 
-function closeContact() {
-  contactModal.style.display = "none";
+function closeContact(){
+  document.getElementById("contactModal").style.display = "none";
+}
+
+
+// THEME
+function toggleTheme(){
+  document.body.classList.toggle("dark");
 }
 
 
 // MUSIC
-const bgMusic = document.getElementById("bgMusic");
+function toggleMusic(){
+  const music = document.getElementById("bgMusic");
 
-function toggleMusic() {
-  if (bgMusic.paused) {
-    bgMusic.play();
+  if(music.paused){
+    music.play();
   } else {
-    bgMusic.pause();
+    music.pause();
   }
 }
 
 
-// MODAL INFO
-function openModal(title, text) {
-  document.getElementById("modal").style.display = "flex";
-  document.getElementById("modal-title").innerText = title;
-  document.getElementById("modal-text").innerText = text;
-}
-
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-}
-
-
-// CLOSE MODAL CLICK OUTSIDE
-window.addEventListener("click", (e) => {
-  if (e.target.classList.contains("modal")) {
-    e.target.style.display = "none";
-  }
-});
-
-
-// INSTALL APP
-let deferredPrompt;
-const installBtn = document.getElementById("installBtn");
-
-installBtn.style.display = "none";
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.style.display = "block";
-});
-
-installBtn.addEventListener("click", async () => {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-  }
-});
-
-
-// SERVICE WORKER
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js");
-  });
-}
-
-
-// TOAST NOTIF
+// LOADER
 window.addEventListener("load", () => {
-  const toast = document.getElementById("toast");
+  const loader = document.getElementById("loader");
 
   setTimeout(() => {
-    toast.classList.add("show");
+    loader.style.display = "none";
   }, 800);
+});
 
+
+// TOAST
+window.addEventListener("load", () => {
   setTimeout(() => {
-    toast.classList.remove("show");
-  }, 4000);
+    document.getElementById("toast").classList.add("show");
+  }, 800);
 });

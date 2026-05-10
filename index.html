@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Xone | Premium UI</title>
+
+  <!-- ICON -->
+  <link rel="shortcut icon" href="asset/eye.jpeg" type="image/x-icon">
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="theme-color" content="#0f0f0f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+
+    <div class="logo">
+      <img src="asset/eye.jpeg" alt="">
+      <span>Xone Website</span>
+    </div>
+
+    <div class="nav-links">
+      <button onclick="goHome()">Home</button>
+      <button onclick="openGallery()">Gallery</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-card">
+
+      <div class="badge">
+        <b>xone pages</b>
+      </div>
+
+      <h1>
+        pokonya web deh hehehe.
+      </h1>
+
+      <p>
+        Website modern bertema estetik,
+        semoga bisa jadi inspirasi buat kalian yang mau belajar bikin website.
+      </p>
+
+      <div class="buttons">
+
+        <button class="primary-btn" onclick="toggleMusic()">
+          play instrument music
+        </button>
+
+        <button class="theme-btn" onclick="toggleTheme()">
+          dark mode
+        </button>
+
+      </div>
+
+      <audio id="bgMusic" loop>
+        <source src="asset/violin.mp3" type="audio/mp3">
+      </audio>
+
+    </div>
+
+    <!-- PROFILE -->
+    <div class="glass-card">
+
+      <div class="profile">
+
+        <div class="avatar"></div>
+
+        <div>
+
+          <h3>Hnafi Developer</h3>
+
+          <div class="social">
+
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+
+            <a href="https://instagram.com/hnfi_ehs" target="_blank">
+              @hnfi_ehs
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="status-box">
+        <h2 id="counter">0</h2>
+        <p>menghitung guys</p>
+      </div>
+
+      <div class="quote">
+        “calm mind brings inner strength.”
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+
+    <div class="card" onclick="openModal('Pandangan Estetika','Dirancang dengan nuansa modern dan tenang.')">
+      <h3>❀ Pandangan Estetika</h3>
+      <p>Tenang, modern, dan penuh keseimbangan visual.</p>
+    </div>
+
+    <div class="card" onclick="openModal('Makna Keindahan','Keindahan hadir dalam detail sederhana.')">
+      <h3>❀ Makna Keindahan</h3>
+      <p>Keindahan tersembunyi dalam detail sederhana.</p>
+    </div>
+
+    <div class="card" onclick="openModal('Percaya Diri','Tetap menjadi diri sendiri dengan tenang.')">
+      <h3>❀ Percaya Diri</h3>
+      <p>Ketulusan lebih kuat daripada keramaian.</p>
+    </div>
+
+    <div class="card" onclick="openModal('Tentang Kehidupan','Setiap perjalanan membawa arti.')">
+      <h3>❀ Tentang Kehidupan</h3>
+      <p>Setiap perjalanan membawa arti berbeda.</p>
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section" id="gallery">
+
+    <h2>gallery photo</h2>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img src="asset/foto1.jpeg">
+      </div>
+
+      <div class="gallery-item">
+        <img src="asset/foto2.jpeg">
+      </div>
+
+      <div class="gallery-item">
+        <img src="asset/foto3.jpeg">
+      </div>
+
+      <div class="gallery-item">
+        <img src="asset/Gawat ni orang.jpeg">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- INSTALL -->
+  <button id="installBtn">
+    install app
+  </button>
+
+  <!-- CONTACT MODAL -->
+  <div id="contactModal" class="modal">
+
+    <div class="modal-box">
+
+      <span class="close" onclick="closeContact()">
+        &times;
+      </span>
+
+      <h2>hubungi saya</h2>
+
+      <p>follow instagram saya :</p>
+
+      <a href="https://instagram.com/hnfi_ehs" target="_blank">
+        @hnfi_ehs
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- INFO MODAL -->
+  <div id="modal" class="modal">
+
+    <div class="modal-content">
+
+      <span class="close" onclick="closeModal()">
+        &times;
+      </span>
+
+      <h2 id="modal-title"></h2>
+
+      <p id="modal-text"></p>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2026 Xone Website
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>

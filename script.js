@@ -1,6 +1,5 @@
 // COUNTER
 let count = 0;
-
 setInterval(()=>{
   if(count < 2009){
     count += 7;
@@ -15,28 +14,36 @@ function toggleTheme(){
 
 // MUSIC
 function toggleMusic(){
-  const music = document.getElementById("bgMusic");
-  music.paused ? music.play() : music.pause();
+  const m = document.getElementById("bgMusic");
+  m.paused ? m.play() : m.pause();
 }
 
-// NAV ACTION
+// HOME
 function goHome(){
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
+// GALLERY
 function openGallery(){
   document.getElementById("gallery").scrollIntoView({behavior:"smooth"});
 }
 
-// MODAL
+// MODAL FEATURES (RESTORED)
+function openModal(title,text){
+  document.getElementById("modal").style.display="flex";
+  document.getElementById("modal-title").innerText=title;
+  document.getElementById("modal-text").innerText=text;
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+
+// CONTACT
 function openContact(){
   document.getElementById("contactModal").style.display="flex";
 }
 
 function closeContact(){
   document.getElementById("contactModal").style.display="none";
-}
-
-function closeModal(){
-  document.getElementById("modal").style.display="none";
 }

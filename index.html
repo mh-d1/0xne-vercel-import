@@ -329,6 +329,22 @@ window.onclick = function(e){
 
   </section>
 
+   <!-- INSTALL BUTTON -->
+  <button id="installbtn">
+    install app
+  </button>
+  <script>
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.getElementById('installbtn').style.display = 'block';
+    });
+    document.getElementById('installbtn').addEventListener('click', async () => {
+      deferredPrompt.prompt();
+    });
+  </script> 
+
   
   <!-- FOOTER -->
   <footer class="footer">

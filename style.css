@@ -20,32 +20,35 @@ body.dark{
   --border:rgba(0,0,0,0.12);
 }
 
+/* BASE FIX (EDGE & CLEAN) */
+html, body{
+  height:100%;
+  width:100%;
+}
+
 body{
   font-family:'Inter',sans-serif;
   background:var(--bg);
   color:var(--text);
 
-  min-height:100vh;
+  min-height:100dvh;
   overflow-x:hidden;
 
-  padding:100px 30px;
+  padding:30px;
 
   transition:0.3s;
-
-
-  
 }
 
-
-/* NAVBAR */
-
+/* NAVBAR FIX */
 .navbar{
   position:fixed;
   top:15px;
   left:50%;
   transform:translateX(-50%);
 
-  width:95%;
+  width:calc(100% - 40px);
+  max-width:1200px;
+
   height:70px;
 
   display:flex;
@@ -69,7 +72,6 @@ body{
   display:flex;
   align-items:center;
   gap:10px;
-
   font-weight:700;
 }
 
@@ -83,6 +85,7 @@ body{
   gap:10px;
 }
 
+/* BUTTONS */
 .nav-links button,
 .primary-btn,
 .theme-btn,
@@ -117,14 +120,16 @@ button:hover{
   transform:translateY(-2px);
 }
 
-/* HERO */
-
+/* HERO FIX (PROPORSI LEBIH NATURAL) */
 .hero{
   display:grid;
-  grid-template-columns:1fr 380px;
+  grid-template-columns:1fr 360px;
   gap:25px;
 
+  margin-top:110px;
   margin-bottom:40px;
+
+  align-items:start;
 }
 
 .hero-card,
@@ -148,18 +153,14 @@ button:hover{
 
 .badge{
   display:inline-block;
-
   padding:10px 16px;
-
   border-radius:999px;
-
   background:rgba(255,255,255,0.06);
-
   margin-bottom:20px;
 }
 
 h1{
-  font-size:clamp(2.5rem,5vw,5rem);
+  font-size:clamp(2rem,4vw,4.5rem);
   margin-bottom:20px;
 }
 
@@ -171,26 +172,21 @@ h1{
 .buttons{
   display:flex;
   gap:15px;
-
   margin-top:30px;
 }
 
 /* PROFILE */
-
 .profile{
   display:flex;
   gap:15px;
   align-items:center;
-
   margin-bottom:25px;
 }
 
 .avatar{
   width:60px;
   height:60px;
-
   border-radius:50%;
-
   background-image:url('asset/black_dog.jpg');
   background-size:cover;
   background-position:center;
@@ -200,7 +196,6 @@ h1{
   display:flex;
   align-items:center;
   gap:10px;
-
   margin-top:8px;
 }
 
@@ -215,11 +210,8 @@ h1{
 
 .status-box{
   margin-top:20px;
-
   padding:20px;
-
   border-radius:24px;
-
   background:rgba(255,255,255,0.05);
 }
 
@@ -228,23 +220,17 @@ h1{
   color:var(--soft);
 }
 
-/* FEATURES */
-
+/* FEATURES FIX */
 .features{
   display:grid;
-
-  grid-template-columns:
-  repeat(auto-fit,minmax(220px,1fr));
-
-  gap:20px;
-
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
   margin-bottom:50px;
 }
 
 .card{
   padding:25px;
   cursor:pointer;
-
   transition:0.3s;
 }
 
@@ -252,14 +238,13 @@ h1{
   transform:translateY(-5px);
 }
 
-/* GALLERY */
-
+/* GALLERY FIX (lebih stabil) */
 .gallery-section h2{
   margin-bottom:25px;
 }
 
 .gallery-grid{
-  columns:4 220px;
+  column-count:4;
   column-gap:18px;
 }
 
@@ -269,9 +254,7 @@ h1{
 
 .gallery-item img{
   width:100%;
-
   border-radius:24px;
-
   transition:0.4s;
 }
 
@@ -280,18 +263,13 @@ h1{
 }
 
 /* MODAL */
-
 .modal{
   display:none;
-
   position:fixed;
   inset:0;
-
   justify-content:center;
   align-items:center;
-
   background:rgba(0,0,0,0.4);
-
   z-index:9999;
 }
 
@@ -299,9 +277,7 @@ h1{
 .modal-content{
   width:90%;
   max-width:500px;
-
   padding:30px;
-
   position:relative;
 }
 
@@ -309,14 +285,11 @@ h1{
   position:absolute;
   right:20px;
   top:10px;
-
   font-size:30px;
-
   cursor:pointer;
 }
 
 /* INSTALL */
-
 #installBtn{
   margin-top:40px;
 }
@@ -324,30 +297,24 @@ h1{
 /* NOTIF */
 .toast{
   position: fixed;
-
   bottom: 30px;
   right: 30px;
 
   padding: 16px 22px;
 
   background: rgba(255,255,255,0.08);
-
   border: 1px solid rgba(255,255,255,0.12);
-
   backdrop-filter: blur(18px);
 
   color: white;
-
   border-radius: 18px;
 
-  box-shadow:
-  0 10px 30px rgba(0,0,0,0.3);
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
 
   z-index: 99999;
 
   opacity: 0;
   transform: translateY(20px);
-
   transition: 0.4s ease;
 
   font-size: 0.95rem;
@@ -359,27 +326,38 @@ h1{
 }
 
 /* FOOTER */
-
 .footer{
   margin-top:50px;
   text-align:center;
   color:var(--soft);
 }
 
-/* RESPONSIVE */
-
+/* RESPONSIVE FIX */
 @media(max-width:900px){
 
   .hero{
     grid-template-columns:1fr;
   }
 
-  .navbar{
-    flex-direction:column;
-    height:auto;
-    padding:15px;
-    gap:15px;
+  .glass-card{
+    width:100%;
+  }
+
+  .gallery-grid{
+    column-count:2;
   }
 
 }
 
+@media(max-width:500px){
+
+  .gallery-grid{
+    column-count:1;
+  }
+
+  .nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+}
